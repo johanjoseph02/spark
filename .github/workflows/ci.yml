@@ -1,0 +1,21 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      # The runtime and dev tools only: tests that need torch are skipped. Training
+      # and the benchmark run on a workstation, and their outputs are committed.
+      - run: uv sync --locked --group dev
+      - run: uv run ruff check src tests
+      - run: uv run mypy src
+      - run: uv run pytest
