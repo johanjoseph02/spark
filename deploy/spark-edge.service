@@ -1,0 +1,25 @@
+# Example systemd unit for a camera board (Raspberry Pi class, 64-bit OS).
+# Copy to /etc/systemd/system/, adjust paths, then:
+#   sudo systemctl enable --now spark-edge
+# The agent restarts on failure and queues reports while the server is unreachable.
+
+[Unit]
+Description=SPARK edge agent
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=spark
+WorkingDirectory=/opt/spark
+Environment=SPARK_DEVICE_TOKEN=change-me
+ExecStart=/opt/spark/.venv/bin/spark edge \
+    --server https://spark.example.org \
+    --lot /opt/spark/configs/lots/my-lot.json \
+    --model /opt/spark/models/default.onnx \
+    --source 0 --fps 2 \
+    --token ${SPARK_DEVICE_TOKEN}
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
