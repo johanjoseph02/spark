@@ -1,0 +1,21 @@
+{
+  "name": "sparknet-w1-r32-int8",
+  "input_size": 32,
+  "width": 1.0,
+  "mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "params": 70817,
+  "macs": 1283840,
+  "output": "logit",
+  "trained_on": "CNRPark+EXT train days",
+  "val_acc": 0.9838043653134553,
+  "quantization": "static int8, QDQ, per-channel weights"
+}

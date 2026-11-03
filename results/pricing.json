@@ -1,0 +1,165 @@
+{
+  "demand": {
+    "capacity": 60,
+    "weekday_peak_per_h": 70.0,
+    "weekend_peak_per_h": 28.0,
+    "wtp_median": 3.0,
+    "wtp_sigma": 0.6,
+    "stay_median_min": 75.0,
+    "stay_sigma": 0.7
+  },
+  "days": 28,
+  "seeds": 5,
+  "policies": {
+    "fixed, base price": {
+      "config": {
+        "target_low": 0.6,
+        "target_high": 0.85,
+        "step": 0.25,
+        "min_price": 0.5,
+        "max_price": 6.0,
+        "base_price": 2.0,
+        "review_every_s": 3600.0,
+        "mode": "fixed"
+      },
+      "mean": {
+        "mean_occupancy": 0.362,
+        "share_time_full": 0.044,
+        "turned_away_per_day": 14.564,
+        "priced_out_per_day": 111.729,
+        "served_per_day": 320.057,
+        "revenue_per_day": 1016.031,
+        "mean_price": 2.0
+      },
+      "sd": {
+        "mean_occupancy": 0.003,
+        "share_time_full": 0.004,
+        "turned_away_per_day": 1.776,
+        "priced_out_per_day": 1.15,
+        "served_per_day": 1.515,
+        "revenue_per_day": 9.004,
+        "mean_price": 0.0
+      }
+    },
+    "fixed, high price": {
+      "config": {
+        "target_low": 0.6,
+        "target_high": 0.85,
+        "step": 0.25,
+        "min_price": 0.5,
+        "max_price": 6.0,
+        "base_price": 4.0,
+        "review_every_s": 3600.0,
+        "mode": "fixed"
+      },
+      "mean": {
+        "mean_occupancy": 0.159,
+        "share_time_full": 0.0,
+        "turned_away_per_day": 0.0,
+        "priced_out_per_day": 305.664,
+        "served_per_day": 140.686,
+        "revenue_per_day": 894.433,
+        "mean_price": 4.0
+      },
+      "sd": {
+        "mean_occupancy": 0.002,
+        "share_time_full": 0.0,
+        "turned_away_per_day": 0.0,
+        "priced_out_per_day": 2.944,
+        "served_per_day": 1.215,
+        "revenue_per_day": 11.045,
+        "mean_price": 0.0
+      }
+    },
+    "responsive (hourly)": {
+      "config": {
+        "target_low": 0.6,
+        "target_high": 0.85,
+        "step": 0.25,
+        "min_price": 0.5,
+        "max_price": 6.0,
+        "base_price": 2.0,
+        "review_every_s": 3600.0,
+        "mode": "responsive"
+      },
+      "mean": {
+        "mean_occupancy": 0.417,
+        "share_time_full": 0.074,
+        "turned_away_per_day": 41.3,
+        "priced_out_per_day": 37.271,
+        "served_per_day": 367.779,
+        "revenue_per_day": 621.94,
+        "mean_price": 0.912
+      },
+      "sd": {
+        "mean_occupancy": 0.003,
+        "share_time_full": 0.004,
+        "turned_away_per_day": 2.316,
+        "priced_out_per_day": 1.424,
+        "served_per_day": 0.903,
+        "revenue_per_day": 12.378,
+        "mean_price": 0.015
+      }
+    },
+    "predictive (hourly)": {
+      "config": {
+        "target_low": 0.6,
+        "target_high": 0.85,
+        "step": 0.25,
+        "min_price": 0.5,
+        "max_price": 6.0,
+        "base_price": 2.0,
+        "review_every_s": 3600.0,
+        "mode": "predictive"
+      },
+      "mean": {
+        "mean_occupancy": 0.432,
+        "share_time_full": 0.08,
+        "turned_away_per_day": 37.914,
+        "priced_out_per_day": 27.529,
+        "served_per_day": 380.907,
+        "revenue_per_day": 595.669,
+        "mean_price": 0.793
+      },
+      "sd": {
+        "mean_occupancy": 0.004,
+        "share_time_full": 0.004,
+        "turned_away_per_day": 3.08,
+        "priced_out_per_day": 1.656,
+        "served_per_day": 1.628,
+        "revenue_per_day": 16.013,
+        "mean_price": 0.017
+      }
+    },
+    "banded by hour and day type": {
+      "config": {
+        "target_low": 0.6,
+        "target_high": 0.85,
+        "step": 0.25,
+        "min_price": 0.5,
+        "max_price": 6.0,
+        "base_price": 2.0,
+        "review_every_s": 3600.0,
+        "mode": "banded"
+      },
+      "mean": {
+        "mean_occupancy": 0.401,
+        "share_time_full": 0.024,
+        "turned_away_per_day": 3.929,
+        "priced_out_per_day": 88.793,
+        "served_per_day": 353.629,
+        "revenue_per_day": 760.526,
+        "mean_price": 1.087
+      },
+      "sd": {
+        "mean_occupancy": 0.002,
+        "share_time_full": 0.003,
+        "turned_away_per_day": 1.144,
+        "priced_out_per_day": 3.066,
+        "served_per_day": 1.274,
+        "revenue_per_day": 12.111,
+        "mean_price": 0.014
+      }
+    }
+  }
+}

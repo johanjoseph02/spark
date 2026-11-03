@@ -1,0 +1,20 @@
+{
+  "name": "sparknet-w0.25-r64",
+  "input_size": 64,
+  "width": 0.25,
+  "mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "params": 5705,
+  "macs": 497216,
+  "output": "logit",
+  "trained_on": "CNRPark+EXT train days",
+  "val_acc": 0.9747412452405213
+}
