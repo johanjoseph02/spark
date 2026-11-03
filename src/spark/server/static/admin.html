@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SPARK: operator dashboard</title>
+  <link rel="icon" href="/static/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <header class="top">
+    <span class="brand">SPARK<small>operator</small></span>
+    <label class="sr-only" for="lot">Car park</label>
+    <select id="lot"></select>
+    <span class="spacer"></span>
+    <span id="live" class="live">live</span>
+  </header>
+  <main class="grid">
+    <section class="grid kpis" id="kpis" aria-label="Key figures"></section>
+
+    <section class="grid two">
+      <div class="card">
+        <h2>Occupancy and price</h2>
+        <h3>Blue: share of bays occupied. Amber: price per hour. Green band: pricing target.</h3>
+        <svg id="trend" class="chart" role="img" aria-label="Occupancy and price over time"></svg>
+      </div>
+      <div class="card">
+        <h2>Live bays</h2>
+        <h3 id="bays-line"></h3>
+        <div id="bays"></div>
+      </div>
+    </section>
+
+    <section class="grid two">
+      <div class="card">
+        <h2>When the car park fills</h2>
+        <h3>Mean occupancy by weekday and hour (lot-local time)</h3>
+        <div id="heat" class="heat" role="img" aria-label="Occupancy by hour of week"></div>
+      </div>
+      <div class="card">
+        <h2>Price reviews</h2>
+        <h3 id="policy"></h3>
+        <div style="display:flex; gap:8px; margin-bottom:10px">
+          <label class="sr-only" for="token">Operator token</label>
+          <input id="token" type="password" placeholder="Operator token (if set)" autocomplete="off" style="flex:1">
+          <button id="review" class="primary" type="button">Review now</button>
+        </div>
+        <div style="max-height:260px; overflow:auto">
+          <table>
+            <thead><tr><th>Time</th><th class="num">Price</th><th class="num">Occupancy</th><th>Why</th></tr></thead>
+            <tbody id="prices"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="/static/admin.js"></script>
+</body>
+</html>
