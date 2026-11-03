@@ -1,0 +1,3 @@
+route_id,route_short_name,route_long_name,route_type
+EXA,Line A (example),Example line A,3
+EXB,Line B (example),Example line B,3

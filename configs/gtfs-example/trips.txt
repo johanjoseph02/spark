@@ -1,0 +1,3 @@
+route_id,service_id,trip_id
+EXA,weekday,EXA-1
+EXB,weekday,EXB-1
