@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+
+# datasets and caches (fetched by `spark data download`)
+/data/
+
+# runtime state
+*.db
+*.db-wal
+*.db-shm
