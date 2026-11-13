@@ -162,3 +162,5 @@ decentralized parking lot occupancy detection*, Expert Systems with Applications
 (2017), and is licensed under the [Open Database License](https://opendatacommons.org/licenses/odbl/1-0/).
 The models in `models/` and the frame above are produced works of that database. The
 transit stops in `configs/gtfs-example` are made-up examples.
+
+The code is released under the [MIT License](LICENSE).
